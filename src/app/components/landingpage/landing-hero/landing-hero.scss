@@ -1,7 +1,5 @@
 .hero {
-  min-height: 780px;
   height: 100svh;
-  max-height: 1080px;
   position: relative;
   display: grid;
   place-items: center;
@@ -28,7 +26,7 @@
 }
 .hero-content {
   z-index: 1;
-  padding: 160px 20px 80px;
+  padding: 80px 20px;
   max-width: 850px;
 }
 .eyebrow {
