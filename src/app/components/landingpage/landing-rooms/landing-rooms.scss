@@ -1,0 +1,87 @@
+.rooms {
+  padding: 120px 6% 130px;
+  background: #f7e6d5;
+}
+.rooms .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.36em;
+  font-size: 10px;
+  font-weight: 500;
+}
+.section-head {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.section-head h2 {
+  font-size: clamp(48px, 6vw, 80px);
+  margin: 18px 0 12px;
+}
+.section-head p {
+  font-size: 14px;
+}
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  max-width: 1320px;
+  margin: auto;
+}
+.room {
+  position: relative;
+  min-height: 480px;
+  overflow: hidden;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+  padding: 32px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.25s;
+}
+.room:hover {
+  transform: translateY(-5px);
+}
+.room:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #15291b11 20%, #0d241bd8 100%);
+}
+.room > * {
+  position: relative;
+}
+.room .room-copy {
+  width: 100%;
+}
+.room h3 {
+  font-size: 45px;
+  margin: 0 0 8px;
+}
+.room p {
+  font-size: 12px;
+  opacity: 0.85;
+  margin: 0 0 18px;
+}
+.room .arrow {
+  font-size: 23px;
+}
+.reiki {
+  background-image: url('/briks.jpeg');
+}
+.sound {
+  background-image: url('/lyd7.png');
+}
+.handpan {
+  background-image: url('/handpan-closeup.jpg');
+}
+@media (max-width: 850px) {
+  .room-grid {
+    grid-template-columns: 1fr;
+  }
+  .room {
+    min-height: 390px;
+  }
+  .rooms {
+    padding: 85px 6%;
+  }
+}

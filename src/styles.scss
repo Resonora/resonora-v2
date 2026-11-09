@@ -1,0 +1,52 @@
+:root {
+  --pine: #192b25;
+  --forest: #2d453a;
+  --sage: #8d9d8c;
+  --cream: #f4f0e7;
+  --paper: #e8e3d7;
+  --ink: #28382d;
+  --gold: #bd986a;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  font: inherit;
+}
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+h1,
+h2,
+h3 {
+  font-family: 'Italiana', Georgia, serif;
+  font-weight: 400;
+}
+p {
+  line-height: 1.8;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+  }
+}

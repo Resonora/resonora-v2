@@ -1,0 +1,20 @@
+<header class="nav">
+  <a class="brand" routerLink="/" fragment="top" (click)="menuOpen.set(false)">RESONORA</a>
+  <nav class="navlinks" aria-label="Hovedmenu">
+    <a routerLink="/lyd">Lyd</a><a routerLink="/handpan">Handpan</a
+    ><a routerLink="/reiki">Reiki</a><a routerLink="/" fragment="rebecka">Bag om Resonora</a
+    >
+    <a class="navcta" routerLink="/" fragment="journal">Kontakt</a>
+  </nav>
+  <button class="menu-btn" type="button" [attr.aria-label]="menuOpen() ? 'Luk menu' : 'Åbn menu'"
+    [attr.aria-expanded]="menuOpen()" aria-controls="mobileLinks" (click)="menuOpen.update(open => !open)">
+    ☰
+  </button>
+  <nav class="mobile-links" id="mobileLinks" aria-label="Mobilmenu" [hidden]="!menuOpen()">
+    <a routerLink="/lyd" (click)="menuOpen.set(false)">Lyd</a
+    ><a routerLink="/handpan" (click)="menuOpen.set(false)">Handpan</a
+    ><a routerLink="/reiki" (click)="menuOpen.set(false)">Reiki</a
+    ><a routerLink="/" fragment="rebecka" (click)="menuOpen.set(false)">Bag om Resonora</a
+    ><a routerLink="/" fragment="journal" (click)="menuOpen.set(false)">Kontakt</a>
+  </nav>
+</header>

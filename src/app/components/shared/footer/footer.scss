@@ -1,0 +1,77 @@
+.footer {
+  background: #182b23;
+  color: #f0ece1;
+  padding: 80px 7% 26px;
+}
+.foot-top {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 45px;
+  padding-bottom: 70px;
+}
+.footer .brand {
+  font-size: 36px;
+  font-family: 'Italiana', serif;
+  letter-spacing: .21em;
+}
+.foot-motto {
+  font-family: 'Italiana', serif;
+  font-size: 24px;
+  max-width: 300px;
+  margin: 10px 0;
+}
+.foot-col h4 {
+  text-transform: uppercase;
+  letter-spacing: 0.19em;
+  font-size: 11px;
+  font-weight: 500;
+  margin-bottom: 23px;
+}
+.foot-col a {
+  display: block;
+  font-size: 13px;
+  color: #e4e5dacc;
+  margin-bottom: 15px;
+}
+.foot-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid #ffffff26;
+  padding-top: 24px;
+  font-size: 11px;
+  color: #ffffff88;
+}
+.concept {
+  position: fixed;
+  z-index: 30;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 40px;
+  background: #f2eee6e8;
+  color: #264032;
+  padding: 10px 14px;
+  backdrop-filter: blur(8px);
+  font-size: 11px;
+  box-shadow: 0 4px 16px #0002;
+}
+.mobile-links {
+  display: none;
+}
+@media (max-width: 850px) {
+  .foot-top {
+    grid-template-columns: 1fr 1fr;
+  }
+  .foot-top > div:first-child {
+    grid-column: 1 / -1;
+  }
+  .footer {
+    padding: 70px 7% 25px;
+  }
+  .foot-bottom {
+    flex-wrap: wrap;
+  }
+  .concept {
+    font-size: 10px;
+  }
+}

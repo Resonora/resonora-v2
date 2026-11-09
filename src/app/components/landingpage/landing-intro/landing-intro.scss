@@ -1,0 +1,74 @@
+.intro {
+  text-align: center;
+  padding: 118px 25px 125px;
+  position: relative;
+  background-image: url('/intro-background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.intro .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.36em;
+  font-size: 10px;
+  font-weight: 500;
+}
+.intro .small {
+  color: #879687;
+}
+.intro h2 {
+  font-size: clamp(44px, 6vw, 77px);
+  line-height: 1.08;
+  max-width: 820px;
+  margin: 26px auto;
+}
+.intro p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 15px;
+}
+.line {
+  height: 50px;
+  width: 1px;
+  background: #9aa99b;
+  margin: 0 auto 25px;
+}
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 40px;
+  padding: 17px 30px;
+  background: var(--forest);
+  color: #f3efe4;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition:
+    transform 0.2s,
+    background 0.2s;
+}
+.cta .arrow {
+  display: inline-block;
+  font-size: 15px;
+  transition: transform 0.2s;
+}
+.cta:hover,
+.cta:focus-visible {
+  background: var(--pine);
+  transform: translateY(-3px);
+}
+.cta:hover .arrow,
+.cta:focus-visible .arrow {
+  transform: translateY(3px);
+}
+.cta:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+@media (max-width: 850px) {
+  .intro {
+    padding: 90px 20px;
+  }
+}

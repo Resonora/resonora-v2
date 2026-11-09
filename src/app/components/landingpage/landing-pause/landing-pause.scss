@@ -1,0 +1,46 @@
+.pause {
+  background: var(--forest);
+  color: #f3efe4;
+  text-align: center;
+  padding: 115px 20px;
+  position: relative;
+  overflow: hidden;
+}
+.pause:before {
+  content: '✳';
+  font-size: 380px;
+  position: absolute;
+  right: -80px;
+  top: -200px;
+  color: #ffffff0a;
+}
+.pause .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.36em;
+  font-size: 10px;
+  font-weight: 500;
+}
+.pause h2 {
+  font-size: clamp(46px, 6vw, 80px);
+  margin: 19px 0;
+}
+.pause p {
+  font-size: 14px;
+  max-width: 500px;
+  margin: auto auto 30px;
+}
+.pause .pill {
+  background: #e8dfcb;
+  display: inline-block;
+  background: #f1eadd;
+  color: #24382b;
+  padding: 17px 30px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: transform 0.2s;
+}
+
+.pause .pill:hover {
+  transform: translateY(-2px);
+}

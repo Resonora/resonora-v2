@@ -1,0 +1,54 @@
+.journal {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  background: #e9e1d2;
+  min-height: 530px;
+}
+.journal .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.36em;
+  font-size: 10px;
+  font-weight: 500;
+}
+.journal-photo {
+  min-height: 490px;
+  background:
+    linear-gradient(0deg, #2a271f33, #2a271f00),
+    url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1100&q=85') center/cover;
+}
+.journal-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 14%;
+}
+.journal h2 {
+  font-size: clamp(50px, 5.5vw, 76px);
+  margin: 20px 0;
+}
+.journal p {
+  font-size: 14px;
+  max-width: 440px;
+}
+.journal .text-link {
+  display: inline-block;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 9px;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  margin-top: 20px;
+}
+@media (max-width: 850px) {
+  .journal {
+    grid-template-columns: 1fr;
+  }
+  .journal-photo {
+    min-height: 340px;
+    order: 2;
+  }
+  .journal-text {
+    padding: 75px 9%;
+  }
+}
