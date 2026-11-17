@@ -7,7 +7,7 @@ import { LandingPause } from '../../components/landingpage/landing-pause/landing
 import { LandingJournal } from '../../components/landingpage/landing-journal/landing-journal';
 
 @Component({
-  imports: [LandingHero, LandingIntro, LandingSplit, LandingRooms, LandingPause, LandingJournal],
+  imports: [LandingHero, LandingIntro, LandingSplit],
   selector: 'app-landingpage',
   styleUrl: './landingpage.scss',
   templateUrl: './landingpage.html',

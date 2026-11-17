@@ -24,11 +24,10 @@ describe('LandingIntro', () => {
   it('links each offer to its corresponding page', () => {
     const links: HTMLAnchorElement[] = Array.from(fixture.nativeElement.querySelectorAll('.offer'));
 
-    expect(links.map((link) => link.getAttribute('href'))).toEqual(['/lyd', '/handpan', '/reiki']);
+    expect(links.map((link) => link.getAttribute('href'))).toEqual(['/handpan', '/lyd']);
     expect(links.map((link) => link.querySelector('h3')?.textContent?.trim())).toEqual([
-      'Lydhealing',
       'Handpan',
-      'Reiki healing',
+      'Lydhealing',
     ]);
   });
 
@@ -36,9 +35,8 @@ describe('LandingIntro', () => {
     const images: HTMLImageElement[] = Array.from(fixture.nativeElement.querySelectorAll('.offer-image img'));
 
     expect(images.map((image) => image.getAttribute('src'))).toEqual([
-      '/lyd7.png',
       '/handpan-closeup.jpg',
-      '/briks.jpeg',
+      '/lyd7.png',
     ]);
   });
 });

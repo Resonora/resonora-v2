@@ -15,10 +15,5 @@ export const routes: Routes = [
     path: 'handpan',
     title: 'Handpan – Resonora',
     loadComponent: () => import('./pages/handpan/handpan').then((m) => m.Handpan),
-  },
-  {
-    path: 'reiki',
-    title: 'Reiki – Resonora',
-    loadComponent: () => import('./pages/reiki/reiki').then((m) => m.Reiki),
-  },
+  }
 ];
