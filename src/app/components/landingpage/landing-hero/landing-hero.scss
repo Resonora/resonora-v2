@@ -1,5 +1,5 @@
 .hero {
-  height: 120svh;
+  height: 115svh;
   position: relative;
   display: grid;
   place-items: center;
@@ -7,7 +7,7 @@
   text-align: center;
   overflow: hidden;
   z-index: 1;
-  margin-bottom: -26vh;
+  margin-bottom: -20vh;
   -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 calc(100% - 20vh), #000000e6 calc(100% - 16.5vh), #000000a6 calc(100% - 11.5vh), #00000059 calc(100% - 6.5vh), #0000001a calc(100% - 2.8vh), transparent 100%);
   mask-image: linear-gradient(180deg, #000 0%, #000 calc(100% - 20vh), #000000e6 calc(100% - 16.5vh), #000000a6 calc(100% - 11.5vh), #00000059 calc(100% - 6.5vh), #0000001a calc(100% - 2.8vh), transparent 100%);
 }
