@@ -1,9 +1,10 @@
 .services {
   padding: 100px 4% 110px;
-  background-image: url('/handpan/services-background.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background:
+    radial-gradient(ellipse at 50% 0%, #2d453a99 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 100%, #bd986a1f 0%, transparent 55%),
+    linear-gradient(180deg, #10251e 0%, var(--pine) 50%, #091b18 100%);
+  color: var(--cream);
 }
 .services h2 {
   font-size: clamp(44px, 6vw, 77px);
@@ -13,7 +14,7 @@
   text-align: center;
 }
 .services .subtext {
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
   font-size: 15px;
   text-align: center;
@@ -24,13 +25,26 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 26px;
   max-width: 1320px;
-  margin: auto;
   align-items: stretch;
-  margin-top: 60px;
+  margin: 60px auto;
 }
 .card {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  background: #10251ee8;
+  color: var(--cream);
+  border: 1px solid #bd986a80;
+  box-shadow: 0 12px 35px #06130f59;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s,
+    border-color 0.25s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+  box-shadow: 0 18px 40px #06130f8c;
 }
 .card-art {
   aspect-ratio: 400 / 220;
@@ -53,8 +67,13 @@
   text-transform: uppercase;
   letter-spacing: 0.22em;
   font-size: 11px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.4;
+  color: var(--gold);
+}
+.desc,
+.meta {
+  color: var(--cream);
 }
 .card h3 {
   font-size: clamp(36px, 3.4vw, 50px);
@@ -73,7 +92,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  border-top: 1px solid;
+  border-top: 1px solid #8d9d8c80;
 }
 .meta,
 .badge,
@@ -102,53 +121,107 @@
 }
 .badge {
   padding: 8px 14px;
-  border: 1px solid;
-}
-
-.light {
-  background: #fbf5ea;
-  color: var(--ink);
-}
-.light .eyebrow,
-.light .meta,
-.light .desc {
-  color: #5f6d5f;
-}
-.light .card-foot {
-  border-color: #e3dccb;
-}
-
-.sage {
-  background: #e6e6da;
-  color: var(--ink);
-}
-.sage .eyebrow,
-.sage .meta,
-.sage .desc {
-  color: #5f6d5f;
-}
-.sage .card-foot {
-  border-color: #d3d4c4;
-}
-
-.dark {
-  background: #1f3a2e;
-  color: var(--cream);
-}
-.dark .eyebrow {
+  border: 1px solid var(--gold);
   color: var(--gold);
 }
-.dark .desc {
-  color: #e3e6dc;
+
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  align-items: center;
+  gap: 70px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
-.dark .card-foot {
-  border-color: #3b5547;
+.about-photo {
+  position: relative;
+  isolation: isolate;
+  border: 1px solid #bd986a80;
+  box-shadow: 0 18px 40px #06130f8c;
 }
-.dark .badge {
-  color: #d8d2c0;
+.about-photo::after {
+  content: '';
+  position: absolute;
+  inset: 14px -14px -14px 14px;
+  z-index: -1;
+  border: 1px solid var(--gold);
+}
+.about-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.about-text .eyebrow {
+  margin-bottom: 22px;
+  color: var(--gold);
+}
+.about-text h3 {
+  font-size: clamp(32px, 3.4vw, 46px);
+  line-height: 1.1;
+  margin: 0 0 24px;
+}
+.about-text p:not(.eyebrow) {
+  margin: 0 0 34px;
+  font-size: 15px;
+  line-height: 1.85;
+}
+.gold-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  max-width: 420px;
+  margin: 70px auto;
+}
+.gold-divider::before,
+.gold-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+.gold-divider::after {
+  transform: scaleX(-1);
+}
+.gold-divider span {
+  width: 9px;
+  height: 9px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  box-shadow: 0 0 14px #bd986a99;
+}
+.contact-btn {
+  padding: 16px 34px;
+  color: var(--cream);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: #bd986a2e;
+  border: 1px solid var(--gold);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+.contact-btn:hover,
+.contact-btn:focus-visible {
+  background: var(--gold);
+  color: var(--pine);
+}
+.contact-btn:focus-visible {
+  outline: 2px solid var(--cream);
+  outline-offset: 4px;
 }
 
 @media (max-width: 1000px) {
+  .about {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    max-width: 480px;
+  }
+  .about-photo::after {
+    inset: 10px -10px -10px 10px;
+  }
   .card-grid {
     grid-template-columns: 1fr;
     max-width: 560px;
