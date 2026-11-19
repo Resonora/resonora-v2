@@ -157,3 +157,17 @@
     margin-top: 48px;
   }
 }
+@media (max-width: 480px) {
+  .intro {
+    padding: calc(60px + 20vh) 16px 70px;
+  }
+  .intro h2 {
+    font-size: 36px;
+  }
+  .intro .quote {
+    margin: 56px 0 40px;
+  }
+  .offer-content {
+    padding: 22px;
+  }
+}

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Formular } from '../../components/contact/formular/formular';
+import { Formular } from '../../components/contact-formular/formular';
 
 @Component({
   imports: [Formular],
