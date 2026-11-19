@@ -1,0 +1,84 @@
+<section class="contact" aria-labelledby="contact-title">
+  <div class="contact-inner">
+    <div class="contact-card">
+    <p class="eyebrow">Kontakt</p>
+    <h2 id="contact-title">Skriv til mig</h2>
+    <p class="intro">
+      Har du et spørgsmål, eller vil du booke en session? Skriv til mig herunder, så vender jeg
+      tilbage så hurtigt jeg kan.
+    </p>
+
+    @if (status() === 'success') {
+      <div class="notice success" role="status">
+        <strong>Tak for din besked!</strong>
+        Jeg vender tilbage til dig snarest muligt.
+      </div>
+    } @else {
+      <form (submit)="onSubmit($event)" novalidate>
+        <div class="field">
+          <label for="name">Navn</label>
+          <input id="name" type="text" autocomplete="name" [formField]="contactForm.name" />
+          @if (contactForm.name().touched() && contactForm.name().invalid()) {
+            <p class="error" role="alert">{{ contactForm.name().errors()[0].message }}</p>
+          }
+        </div>
+
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input id="email" type="email" autocomplete="email" [formField]="contactForm.email" />
+          @if (contactForm.email().touched() && contactForm.email().invalid()) {
+            <p class="error" role="alert">{{ contactForm.email().errors()[0].message }}</p>
+          }
+        </div>
+
+        <div class="field">
+          <label for="topic">Hvad drejer det sig om? <span class="optional">(valgfrit)</span></label>
+          <select id="topic" [formField]="contactForm.topic">
+            <option value="">Vælg…</option>
+            @for (topic of topics; track topic) {
+              <option [value]="topic">{{ topic }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="message">Besked</label>
+          <textarea id="message" rows="5" [formField]="contactForm.message"></textarea>
+          @if (contactForm.message().touched() && contactForm.message().invalid()) {
+            <p class="error" role="alert">{{ contactForm.message().errors()[0].message }}</p>
+          }
+        </div>
+
+        <input
+          class="honeypot"
+          type="checkbox"
+          tabindex="-1"
+          autocomplete="off"
+          aria-hidden="true"
+          [formField]="contactForm.botcheck"
+        />
+
+        @if (status() === 'error') {
+          <div class="notice failure" role="alert">
+            Beskeden kunne ikke sendes. Prøv igen, eller skriv til
+            <a href="mailto:kontakt@resonora.dk">kontakt&#64;resonora.dk</a>.
+          </div>
+        }
+
+        <button type="submit" class="submit-btn" [disabled]="status() === 'sending'">
+          {{ status() === 'sending' ? 'Sender…' : 'Send besked' }}
+          <span aria-hidden="true">↗</span>
+        </button>
+      </form>
+    }
+    <div class="direct-contact">
+      <p>Du kan også altid kontakte mig direkte:</p>
+      <p>
+        <a href="tel:+4593391193">Tlf. 93 39 11 93</a>
+        <span aria-hidden="true"> · </span>
+        <a href="mailto:kontakt@resonora.dk">kontakt&#64;resonora.dk</a>
+      </p>
+    </div>
+    </div>
+  </div>
+</section>

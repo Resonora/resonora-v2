@@ -15,5 +15,15 @@ export const routes: Routes = [
     path: 'handpan',
     title: 'Handpan – Resonora',
     loadComponent: () => import('./pages/handpan/handpan').then((m) => m.Handpan),
-  }
+  },
+  {
+    path: 'om',
+    title: 'Om Resonora – Resonora',
+    loadComponent: () => import('./pages/about-me/about-me').then((m) => m.AboutMe),
+  },
+  {
+    path: 'kontakt',
+    title: 'Kontakt – Resonora',
+    loadComponent: () => import('./pages/contact/contact').then((m) => m.Contact),
+  },
 ];
