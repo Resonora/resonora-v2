@@ -27,6 +27,21 @@ describe('App routing', () => {
     expect(root.querySelector('app-footer')).toBeTruthy();
   });
 
+  it.each([
+    ['/handpan/for-nysgerrige', 'app-handpan-first-touch'],
+    ['/handpan/for-begyndere', 'app-handpan-your-handpan'],
+  ])('renders %s in the shared layout', async (url, selector) => {
+    const fixture = TestBed.createComponent(App);
+    const router = TestBed.inject(Router);
+    await router.navigateByUrl(url);
+    await fixture.whenStable();
+
+    const root = fixture.nativeElement as HTMLElement;
+    expect(root.querySelector(selector)).toBeTruthy();
+    expect(root.querySelector('app-header')).toBeTruthy();
+    expect(root.querySelector('app-footer')).toBeTruthy();
+  });
+
   it('keeps the shared layout on future pages and navigates back to a landing section', async () => {
     const fixture = TestBed.createComponent(App);
     const router = TestBed.inject(Router);

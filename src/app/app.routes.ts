@@ -17,6 +17,22 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/handpan/handpan').then((m) => m.Handpan),
   },
   {
+    path: 'handpan/for-nysgerrige',
+    title: 'For nysgerrige – Resonora',
+    loadComponent: () =>
+      import('./components/handpan/subpages/handpan-offer1/handpan-offer1').then(
+        (m) => m.HandpanOffer1,
+      ),
+  },
+  {
+    path: 'handpan/for-begyndere',
+    title: 'For begyndere – Resonora',
+    loadComponent: () =>
+      import('./components/handpan/subpages/handpan-offer3/handpan-your-handpan').then(
+        (m) => m.HandpanYourHandpan,
+      ),
+  },
+  {
     path: 'om',
     title: 'Om Resonora – Resonora',
     loadComponent: () => import('./pages/about-me/about-me').then((m) => m.AboutMe),

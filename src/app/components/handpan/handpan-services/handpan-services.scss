@@ -41,6 +41,9 @@
     box-shadow 0.25s,
     border-color 0.25s;
 }
+.card--interactive {
+  cursor: pointer;
+}
 .card:hover {
   transform: translateY(-5px);
   border-color: var(--gold);
@@ -83,7 +86,7 @@
 .desc {
   font-size: 15px;
   line-height: 1.85;
-  margin: 0 0 40px;
+  margin: 0 0 25px;
 }
 .card-foot {
   margin-top: auto;
@@ -93,6 +96,14 @@
   justify-content: space-between;
   gap: 16px;
   border-top: 1px solid #8d9d8c80;
+}
+.card-foot--pricing {
+  flex-wrap: wrap;
+}
+.price-options {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 .meta,
 .badge,
@@ -123,6 +134,70 @@
   padding: 8px 14px;
   border: 1px solid var(--gold);
   color: var(--gold);
+}
+
+.travel {
+  max-width: 1320px;
+  margin: 0 auto;
+  text-align: center;
+}
+.travel .eyebrow {
+  margin: 0 0 12px;
+}
+.travel h3 {
+  margin: 0 0 12px;
+  font-size: clamp(36px, 4vw, 52px);
+  line-height: 1.1;
+}
+.travel-intro {
+  max-width: 800px;
+  margin: 0 auto 24px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.travel-prices {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 900px;
+  margin: 0 auto;
+}
+.travel-price {
+  padding: 12px 20px;
+}
+.travel-price + .travel-price {
+  border-left: 1px solid #bd986a40;
+}
+.travel-price h4 {
+  margin: 0 0 10px;
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.travel-price p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.travel-price .travel-amount {
+  margin-bottom: 6px;
+  font-family: 'Italiana', Georgia, serif;
+  font-size: 26px;
+  line-height: 1.1;
+}
+.travel-note {
+  margin: 20px 0 0;
+  font-size: 13px;
+  font-style: italic;
+}
+.travel-note a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.travel-note a:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
 }
 
 .about {
@@ -233,5 +308,13 @@
   }
   .card-body {
     padding: 36px 28px 30px;
+  }
+  .travel-prices {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+  }
+  .travel-price + .travel-price {
+    border-left: 0;
+    border-top: 1px solid #bd986a40;
   }
 }
