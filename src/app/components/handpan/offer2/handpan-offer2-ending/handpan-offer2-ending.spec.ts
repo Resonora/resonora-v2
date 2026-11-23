@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { HandpanOffer2 } from './handpan-offer2';
+import { HandpanOffer2Ending } from './handpan-offer2-ending';
 
-describe('HandpanOffer2', () => {
-  let component: HandpanOffer2;
-  let fixture: ComponentFixture<HandpanOffer2>;
+describe('HandpanOffer2Ending', () => {
+  let component: HandpanOffer2Ending;
+  let fixture: ComponentFixture<HandpanOffer2Ending>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HandpanOffer2],
+      imports: [HandpanOffer2Ending],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(HandpanOffer2);
+    fixture = TestBed.createComponent(HandpanOffer2Ending);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

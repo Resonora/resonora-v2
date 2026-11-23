@@ -41,13 +41,12 @@
     box-shadow 0.25s,
     border-color 0.25s;
 }
-.card--interactive {
-  cursor: pointer;
-}
+
 .card:hover {
   transform: translateY(-5px);
   border-color: var(--gold);
   box-shadow: 0 18px 40px #06130f8c;
+  cursor: pointer;
 }
 .card-art {
   aspect-ratio: 400 / 220;

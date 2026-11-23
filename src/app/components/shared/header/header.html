@@ -1,19 +1,46 @@
 <header class="nav">
-  <a class="brand" routerLink="/" fragment="top" (click)="menuOpen.set(false)">RESONORA</a>
+  <a class="brand" routerLink="/" (click)="closeMenus()">RESONORA</a>
   <nav class="navlinks" aria-label="Hovedmenu">
-    <a routerLink="/handpan">Handpan</a
-    ><a routerLink="/lyd">Lydmeditation</a><a routerLink="/om">Vision</a
-    >
-    <a class="navcta" routerLink="/kontakt">Kontakt</a>
+    <div class="handpan-nav" (pointerenter)="openHandpanOnHover($event)"
+      (pointerleave)="closeHandpanOnHoverLeave($event)"
+      (focusout)="closeHandpanOnFocusOut($event)" (keydown.escape)="closeHandpanMenu(desktopHandpanToggle)">
+      <button #desktopHandpanToggle class="handpan-toggle" type="button"
+        [attr.aria-expanded]="handpanMenuOpen()" aria-controls="desktopHandpanLinks"
+        (click)="toggleHandpanMenu($event)">
+        Handpan <span class="handpan-chevron" aria-hidden="true"></span>
+      </button>
+      <div class="handpan-dropdown" id="desktopHandpanLinks" [hidden]="!handpanMenuOpen()">
+        <a routerLink="/handpan" (click)="closeMenus()">Handpan intro</a>
+        <a routerLink="/handpan/for-nysgerrige" (click)="closeMenus()">For nysgerrige</a>
+        <a routerLink="/handpan/for-begyndere" (click)="closeMenus()">For begyndere</a>
+        <a routerLink="/handpan/for-dig-med-handpan" (click)="closeMenus()">For dig med egen handpan</a>
+      </div>
+    </div>
+    <a routerLink="/lyd" (click)="closeMenus()">Lydmeditation</a>
+    <a routerLink="/om" (click)="closeMenus()">Vision</a>
+    <a class="navcta" routerLink="/kontakt" (click)="closeMenus()">Kontakt</a>
   </nav>
   <button class="menu-btn" type="button" [attr.aria-label]="menuOpen() ? 'Luk menu' : 'Åbn menu'"
-    [attr.aria-expanded]="menuOpen()" aria-controls="mobileLinks" (click)="menuOpen.update(open => !open)">
+    [attr.aria-expanded]="menuOpen()" aria-controls="mobileLinks" (click)="toggleMenu()">
     ☰
   </button>
   <nav class="mobile-links" id="mobileLinks" aria-label="Mobilmenu" [hidden]="!menuOpen()">
-    <a routerLink="/lyd" (click)="menuOpen.set(false)">Lyd</a
-    ><a routerLink="/handpan" (click)="menuOpen.set(false)">Handpan</a
-    ><a routerLink="/om" (click)="menuOpen.set(false)">Bag om Resonora</a
-    ><a routerLink="/kontakt" (click)="menuOpen.set(false)">Kontakt</a>
+    
+    <div class="handpan-nav" (focusout)="closeHandpanOnFocusOut($event)" (keydown.escape)="closeHandpanMenu(mobileHandpanToggle)">
+      <button #mobileHandpanToggle class="handpan-toggle" type="button"
+        [attr.aria-expanded]="handpanMenuOpen()" aria-controls="mobileHandpanLinks"
+        (click)="toggleHandpanMenu($event)">
+        Handpan <span class="handpan-chevron" aria-hidden="true"></span>
+      </button>
+      <div class="handpan-dropdown" id="mobileHandpanLinks" [hidden]="!handpanMenuOpen()">
+        <a routerLink="/handpan" (click)="closeMenus()">Handpan intro</a>
+        <a routerLink="/handpan/for-nysgerrige" (click)="closeMenus()">For nysgerrige</a>
+        <a routerLink="/handpan/for-begyndere" (click)="closeMenus()">For begyndere</a>
+        <a routerLink="/handpan/for-dig-med-handpan" (click)="closeMenus()">For dig med egen handpan</a>
+      </div>
+    </div>
+    <a routerLink="/lyd" (click)="closeMenus()">Lyd</a>
+    <a routerLink="/om" (click)="closeMenus()">Bag om Resonora</a>
+    <a routerLink="/kontakt" (click)="closeMenus()">Kontakt</a>
   </nav>
 </header>

@@ -26,9 +26,13 @@ export const routes: Routes = [
     path: 'handpan/for-begyndere',
     title: 'For begyndere – Resonora',
     loadComponent: () =>
-      import('./components/handpan/offer3/handpan-offer3/handpan-your-handpan').then(
-        (m) => m.HandpanYourHandpan,
-      ),
+      import('./pages/handpan-offer2/handpan-offer2').then((m) => m.HandpanOffer2),
+  },
+  {
+    path: 'handpan/for-dig-med-handpan',
+    title: 'For dig med handpan – Resonora',
+    loadComponent: () =>
+      import('./pages/handpan-offer3/handpan-offer3').then((m) => m.HandpanOffer3),
   },
   {
     path: 'om',

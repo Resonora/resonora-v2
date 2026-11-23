@@ -28,6 +28,82 @@
 .footer a:hover {
   opacity: 0.7;
 }
+.handpan-nav {
+  position: relative;
+}
+.navlinks .handpan-nav {
+  display: flex;
+  align-items: center;
+}
+.handpan-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 44px;
+  padding: 0 4px;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+}
+.handpan-toggle:hover,
+.handpan-toggle[aria-expanded='true'] {
+  color: var(--gold);
+}
+.handpan-chevron {
+  width: 7px;
+  height: 7px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 180ms ease;
+}
+.handpan-toggle[aria-expanded='true'] .handpan-chevron {
+  transform: translateY(2px) rotate(225deg);
+}
+.handpan-toggle:focus-visible,
+.handpan-dropdown a:focus-visible {
+  outline: 2px solid var(--cream);
+  outline-offset: 2px;
+}
+.navlinks .handpan-dropdown:not([hidden]) {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: grid;
+  min-width: 260px;
+  padding: 10px;
+  background: #192f26;
+  border: 1px solid #bd986a80;
+  box-shadow: 0 12px 30px #00000066;
+  animation: dropdown-enter 180ms ease-out;
+}
+.navlinks .handpan-dropdown a {
+  padding: 14px;
+  border-radius: 2px;
+}
+.navlinks .handpan-dropdown a:hover,
+.navlinks .handpan-dropdown a:focus-visible {
+  color: var(--cream);
+  background: #ffffff14;
+  opacity: 1;
+}
+.handpan-dropdown a:first-child {
+  border-bottom: 1px solid #bd986a66;
+}
+@keyframes dropdown-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .navcta {
   padding: 14px 23px;
   border: 1px solid #ffffff80;
@@ -61,10 +137,32 @@
     padding: 24px 6%;
     background: var(--pine);
   }
+  .mobile-links .handpan-toggle {
+    width: 100%;
+    padding: 14px;
+    border-bottom: 1px solid #ffffff22;
+  }
+  .mobile-links .handpan-dropdown:not([hidden]) {
+    display: grid;
+    padding-left: 16px;
+    animation: dropdown-enter 180ms ease-out;
+  }
+  .mobile-links .handpan-dropdown a {
+    padding: 14px;
+  }
 }
 @media (max-width: 850px) {
   .nav {
     height: 72px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .handpan-chevron {
+      transition: none;
+    }
+    .navlinks .handpan-dropdown:not([hidden]),
+    .mobile-links .handpan-dropdown:not([hidden]) {
+      animation: none;
+    }
   }
   .brand {
     font-size: 23px;
