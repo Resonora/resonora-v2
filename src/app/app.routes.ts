@@ -20,15 +20,13 @@ export const routes: Routes = [
     path: 'handpan/for-nysgerrige',
     title: 'For nysgerrige – Resonora',
     loadComponent: () =>
-      import('./components/handpan/subpages/handpan-offer1/handpan-offer1').then(
-        (m) => m.HandpanOffer1,
-      ),
+      import('./pages/handpan-offer1/handpan-offer1').then((m) => m.HandpanOffer1),
   },
   {
     path: 'handpan/for-begyndere',
     title: 'For begyndere – Resonora',
     loadComponent: () =>
-      import('./components/handpan/subpages/handpan-offer3/handpan-your-handpan').then(
+      import('./components/handpan/offer3/handpan-offer3/handpan-your-handpan').then(
         (m) => m.HandpanYourHandpan,
       ),
   },
