@@ -67,8 +67,8 @@
 }
 
 .expectation-icon svg {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
 }
 
 .expectation-list h3 {
@@ -107,6 +107,20 @@
   letter-spacing: 0.2em;
   line-height: 1.5;
   text-transform: uppercase;
+}
+
+.normal-price {
+  margin: 16px 0 0;
+  font-size: 13px;
+}
+
+.normal-price s {
+  text-decoration-color: var(--gold);
+}
+
+.highlight {
+  color: var(--gold);
+  text-decoration: underline;
 }
 
 .price {

@@ -21,7 +21,16 @@
   z-index: -1;
   inset: 0;
   background:
-    linear-gradient(90deg, #10251c30 0%, #10251c4d 30%, #10251c 63%, #10251c 100%),
+    linear-gradient(
+      90deg,
+      #10251c30 10%,
+      #10251c38 20%,
+      #10251c57 32%,
+      #10251c94 44%,
+      #10251ccf 54%,
+      #10251cf0 64%,
+      #10251c 76%
+    ),
     linear-gradient(0deg, #10251c40, transparent 70%);
   content: '';
 }

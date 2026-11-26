@@ -1,54 +1,63 @@
+.ending {
+  display: flow-root;
+  background: #10251c;
+}
+
 .ending-card {
   position: relative;
   isolation: isolate;
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   align-items: center;
-  min-height: clamp(500px, 30vw, 360px);
+  min-height: 500px;
   overflow: hidden;
   color: var(--cream);
   background: #10251c;
 }
 
-.ending-background {
-  z-index: -2;
-  object-fit: cover;
-  object-position: center 54%;
+.ending-photo {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  max-width: 700px;
 }
 
-.ending-card::before {
+.ending-photo img {
+  object-fit: cover;
+  object-position: center 35%;
+  filter: saturate(0.7) sepia(0.15) brightness(0.9);
+}
+
+.ending-photo::after {
   position: absolute;
-  z-index: -1;
   inset: 0;
   background:
-    linear-gradient(90deg, #10251c30 0%, #10251c4d 30%, #10251c 63%, #10251c 100%),
-    linear-gradient(0deg, #10251c40, transparent 70%);
+    linear-gradient(90deg, transparent 40%, #10251c66 75%, #10251c 100%),
+    linear-gradient(0deg, #10251c40, transparent 40%);
   content: '';
 }
 
 .ending-ornament {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: 6%;
-  left: 6%;
+  position: relative;
+  display: block;
+  width: min(420px, calc(100% - 48px));
   height: 1px;
-  background: #bd986a80;
+  margin: 0 auto 48px;
+  background: linear-gradient(90deg, transparent, #bd986a80, transparent);
 }
 
 .ending-ornament::after {
   position: absolute;
-  top: -3px;
+  top: 50%;
   left: 50%;
   width: 6px;
   height: 6px;
   background: var(--gold);
   content: '';
-  transform: translateX(-50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .ending-content {
-  z-index: 1;
   grid-column: 2;
   max-width: 460px;
   padding: 48px 12% 48px 4%;
@@ -80,24 +89,29 @@ h2 {
 }
 
 @media (max-width: 600px) {
+  .ending-ornament {
+    margin-bottom: 32px;
+  }
+
   .ending-card {
     grid-template-columns: 1fr;
-    min-height: 380px;
+    min-height: 0;
   }
 
-  .ending-background {
-    object-position: center 43%;
+  .ending-photo {
+    height: clamp(320px, 100vw, 480px);
   }
 
-  .ending-card::before {
-    background:
-      linear-gradient(0deg, #10251c 0%, #10251ce8 34%, #10251c20 78%),
-      linear-gradient(90deg, #10251c30, transparent);
+  .ending-photo img {
+    object-position: center 45%;
+  }
+
+  .ending-photo::after {
+    background: linear-gradient(0deg, #10251c, transparent 35%);
   }
 
   .ending-content {
     grid-column: 1;
-    align-self: end;
-    padding: 150px 24px 32px;
+    padding: 0 24px 32px;
   }
 }

@@ -18,13 +18,13 @@ export const routes: Routes = [
   },
   {
     path: 'handpan/for-nysgerrige',
-    title: 'For nysgerrige – Resonora',
+    title: 'For den nysgerrige – Resonora',
     loadComponent: () =>
       import('./pages/handpan-offer1/handpan-offer1').then((m) => m.HandpanOffer1),
   },
   {
-    path: 'handpan/for-begyndere',
-    title: 'For begyndere – Resonora',
+    path: 'handpan/for-begynderen',
+    title: 'For begynderen – Resonora',
     loadComponent: () =>
       import('./pages/handpan-offer2/handpan-offer2').then((m) => m.HandpanOffer2),
   },

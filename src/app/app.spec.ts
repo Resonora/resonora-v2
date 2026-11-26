@@ -29,7 +29,7 @@ describe('App routing', () => {
 
   it.each([
     ['/handpan/for-nysgerrige', 'app-handpan-first-touch'],
-    ['/handpan/for-begyndere', 'app-handpan-your-handpan'],
+    ['/handpan/for-begynderen', 'app-handpan-your-handpan'],
   ])('renders %s in the shared layout', async (url, selector) => {
     const fixture = TestBed.createComponent(App);
     const router = TestBed.inject(Router);

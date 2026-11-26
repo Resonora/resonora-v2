@@ -104,6 +104,18 @@
   flex-direction: column;
   gap: 6px;
 }
+.intro-price {
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+.price-options s {
+  text-decoration-color: var(--gold);
+  text-decoration-thickness: 1px;
+}
 .meta,
 .badge,
 .more {
@@ -197,6 +209,10 @@
 .travel-note a:focus-visible {
   outline: 2px solid var(--gold);
   outline-offset: 4px;
+}
+
+.highlight {
+  font-style: italic;
 }
 
 .about {

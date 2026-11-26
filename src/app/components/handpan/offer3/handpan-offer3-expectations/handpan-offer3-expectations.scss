@@ -67,8 +67,8 @@
 }
 
 .expectation-icon svg {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
 }
 
 .expectation-list h3 {
@@ -114,6 +114,28 @@
   font-family: 'Italiana', Georgia, serif;
   font-size: 42px;
   line-height: 1;
+}
+
+.price-unit {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+}
+
+.package-price {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 20px;
+  padding-top: 16px;
+  border-top: 1px solid #bd986a66;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.package-price strong {
+  color: var(--gold);
+  font-weight: 500;
 }
 
 .booking-link {

@@ -54,7 +54,7 @@ describe('Header', () => {
     expect(Array.from(dropdown.querySelectorAll('a'), (link) => link.getAttribute('href'))).toEqual([
       '/handpan#handpan-services',
       '/handpan/for-nysgerrige',
-      '/handpan/for-begyndere',
+      '/handpan/for-begynderen',
       '/handpan/for-dig-med-handpan',
     ]);
 

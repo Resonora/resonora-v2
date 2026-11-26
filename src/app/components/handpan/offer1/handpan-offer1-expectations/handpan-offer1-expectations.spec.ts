@@ -21,6 +21,14 @@ describe('HandpanOffer1Expectations', () => {
     expect(component).toBeTruthy();
   });
 
+  it('shows the December price alongside the normal price', () => {
+    const root = fixture.nativeElement as HTMLElement;
+
+    expect(root.querySelector('.normal-price s')?.textContent).toBe('395,-');
+    expect(root.querySelector('.booking-card')?.textContent).toContain('Decemberpris');
+    expect(root.querySelector('.price')?.textContent).toBe('295,-');
+  });
+
   it('shows session details and links to the contact page for booking', () => {
     const root = fixture.nativeElement as HTMLElement;
 
@@ -30,7 +38,7 @@ describe('HandpanOffer1Expectations', () => {
     expect(root.querySelector('.expectation-list li:last-child p')?.textContent).toContain(
       'skala, størrelse, stand og pris',
     );
-    expect(root.querySelector('.price')?.textContent).toContain('395,-');
+    expect(root.querySelector('.price')?.textContent).toContain('295,-');
     expect(root.querySelector('.booking-link')?.getAttribute('href')).toBe('/kontakt');
   });
 });

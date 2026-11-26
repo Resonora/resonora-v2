@@ -18,4 +18,13 @@ describe('HandpanOffer1Ending', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('shows the portrait with the ending text', () => {
+    const root = fixture.nativeElement as HTMLElement;
+    const image = root.querySelector<HTMLImageElement>('.ending-photo img');
+
+    expect(image?.getAttribute('src')).toBe('/handpan/rebecka-handpan-vand.jpeg');
+    expect(image?.getAttribute('alt')).toBe('Rebecka spiller handpan ved vandet');
+    expect(root.querySelector('#ending-title')?.textContent).toContain('En lyd, der gør noget');
+  });
 });

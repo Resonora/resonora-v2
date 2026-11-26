@@ -21,6 +21,16 @@ describe('HandpanServices', () => {
     expect(component).toBeTruthy();
   });
 
+  it('shows December prices alongside the normal prices for the first two offers', () => {
+    const cards = (fixture.nativeElement as HTMLElement).querySelectorAll<HTMLElement>('.card');
+
+    expect(cards[0].querySelector('s')?.textContent).toBe('395,-');
+    expect(cards[0].querySelector('.intro-price')?.textContent).toContain('Decemberpris · 295,-');
+    expect(cards[1].querySelector('s')?.textContent).toBe('695,-');
+    expect(cards[1].querySelector('.intro-price')?.textContent).toContain('Decemberpris · 550,-');
+    expect(cards[2].querySelector('.intro-price')).toBeNull();
+  });
+
   it('shows a pointer cursor only on the interactive cards', () => {
     const cards = (fixture.nativeElement as HTMLElement).querySelectorAll<HTMLElement>('.card');
 
