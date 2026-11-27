@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
+import { vi } from 'vitest';
 import { routes } from '../../../app.routes';
 import { Header } from './header';
 
@@ -20,6 +21,28 @@ describe('Header', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('makes the header progressively opaque as the page scrolls', async () => {
+    const scrollY = vi.spyOn(window, 'scrollY', 'get').mockReturnValue(100);
+    const root = fixture.nativeElement as HTMLElement;
+    try {
+      window.dispatchEvent(new Event('scroll'));
+      await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
+      expect(root.style.getPropertyValue('--nav-opacity')).toBe('0.5');
+
+      scrollY.mockReturnValue(300);
+      window.dispatchEvent(new Event('scroll'));
+      await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
+      expect(root.style.getPropertyValue('--nav-opacity')).toBe('1');
+
+      scrollY.mockReturnValue(0);
+      window.dispatchEvent(new Event('scroll'));
+      await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
+      expect(root.style.getPropertyValue('--nav-opacity')).toBe('0');
+    } finally {
+      scrollY.mockRestore();
+    }
   });
 
   it('opens the mobile menu and closes it after selecting a link', async () => {
