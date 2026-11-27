@@ -83,6 +83,20 @@ if the production domain changes. Confirm the business address, phone, email and
 profile in the structured data are appropriate for public display.
 The app uses WebP and JPEG images; social previews use JPEG for compatibility.
 
+### Vercel Web Analytics
+
+In the Vercel dashboard, open the project, select **Analytics**, and click **Enable**.
+Deploy the updated site after enabling it. Visit the deployed site and navigate between pages,
+then check the Analytics dashboard and browser Network tab for a Vercel analytics view request.
+Local development uses Vercel's debug script rather than sending production analytics data.
+
+Vercel Web Analytics collects page-view information, including URLs and filtered query
+parameters, without third-party cookies. Review Vercel's
+[privacy documentation](https://vercel.com/docs/analytics/privacy-policy), your applicable
+privacy and consent obligations, and the project's privacy notice before enabling it.
+See Vercel's [pricing and limits](https://vercel.com/docs/analytics/limits-and-pricing) for
+the current plan details.
+
 ## Running unit tests
 
 To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
