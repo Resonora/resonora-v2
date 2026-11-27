@@ -35,9 +35,9 @@ export const routes: Routes = [
       import('./pages/handpan-offer3/handpan-offer3').then((m) => m.HandpanOffer3),
   },
   {
-    path: 'om',
-    title: 'Om Resonora – Resonora',
-    loadComponent: () => import('./pages/about-me/about-me').then((m) => m.AboutMe),
+    path: 'vision',
+    title: 'Vision – Resonora',
+    loadComponent: () => import('./pages/vision/vision').then((m) => m.Vision),
   },
   {
     path: 'kontakt',
