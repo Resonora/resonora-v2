@@ -22,15 +22,32 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "src/main.ts",
+            "server": "src/main.server.ts",
+            "outputMode": "static",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "LICENSE",
+                "input": "node_modules/@fontsource/dm-sans",
+                "output": "licenses/dm-sans"
+              },
+              {
+                "glob": "LICENSE",
+                "input": "node_modules/@fontsource/italiana",
+                "output": "licenses/italiana"
               }
             ],
             "styles": [
+              "node_modules/@fontsource/dm-sans/300.css",
+              "node_modules/@fontsource/dm-sans/400.css",
+              "node_modules/@fontsource/dm-sans/500.css",
+              "node_modules/@fontsource/dm-sans/600.css",
+              "node_modules/@fontsource/italiana/400.css",
               "src/styles.scss"
             ]
           },

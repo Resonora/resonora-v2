@@ -25,7 +25,7 @@ describe('HandpanOffer1Hero', () => {
 
     expect(root.querySelector('h1')?.textContent).toContain('Det første møde');
     expect(root.querySelector('.intro')?.textContent).toContain('rolig og uformel introduktion');
-    expect(image?.getAttribute('src')).toBe('/handpan/handpan-person.jpg');
+    expect(image?.getAttribute('src')).toBe('/handpan/handpan (4).jpg');
     expect(image?.getAttribute('alt')).toBe('');
   });
 });

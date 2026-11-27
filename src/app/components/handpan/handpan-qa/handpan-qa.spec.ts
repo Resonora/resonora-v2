@@ -27,6 +27,6 @@ describe('HandpanQa', () => {
     expect(root.querySelector('h2')?.textContent).toContain('Spørgsmål & svar');
     expect(root.querySelectorAll('details')).toHaveLength(5);
     expect(root.querySelector('.contact-link')?.getAttribute('href')).toBe('/kontakt');
-    expect(root.querySelector('img')?.getAttribute('src')).toBe('/handpan/handpan (3).jpg');
+    expect(root.querySelector('img')?.getAttribute('src')).toBe('/handpan/handpan (1).jpg');
   });
 });

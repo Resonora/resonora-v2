@@ -9,7 +9,7 @@
   min-height: 590px;
   background:
     linear-gradient(115deg, #20382d33, #17282077),
-    url('/rebecka1.png') center/cover;
+    url('/rebecka1.webp') center/cover;
 }
 .split-text {
   background: linear-gradient(180deg, #10251e 0%, var(--pine) 55%, #091b18 100%);
@@ -48,7 +48,7 @@
     aspect-ratio: 1672 / 878;
     background:
       linear-gradient(90deg, transparent 48%, #101b14b3 65%),
-      url('/landingpage-cover(1).png') left center / 100% auto no-repeat,
+      url('/landingpage-cover(1).webp') left center / 100% auto no-repeat,
       #18251a;
   }
   .portrait-art {
@@ -73,7 +73,7 @@
   }
   .split .portrait-art {
     min-height: 520px;
-    background: url('/rebecka1.png') center 25% / cover;
+    background: url('/rebecka1.webp') center 25% / cover;
     -webkit-mask-image: linear-gradient(180deg, #000 45%, #000000a0 72%, transparent 100%);
     mask-image: linear-gradient(180deg, #000 45%, #000000a0 72%, transparent 100%);
   }

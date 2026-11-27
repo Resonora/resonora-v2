@@ -2,7 +2,7 @@
   <div class="contact-inner">
     <div class="contact-card">
     <p class="eyebrow">Kontakt</p>
-    <h2 id="contact-title">Skriv til mig</h2>
+    <h1 id="contact-title">Skriv til mig</h1>
     <p class="intro">
       Har du spørgsmål, eller vil du booke en session? Skriv til mig herunder, så vender jeg
       tilbage så hurtigt jeg kan.
@@ -17,17 +17,21 @@
       <form (submit)="onSubmit($event)" novalidate>
         <div class="field">
           <label for="name">Navn</label>
-          <input id="name" type="text" autocomplete="name" [formField]="contactForm.name" />
+          <input id="name" type="text" autocomplete="name" [formField]="contactForm.name"
+            [attr.aria-invalid]="contactForm.name().touched() && contactForm.name().invalid() ? 'true' : null"
+            [attr.aria-describedby]="contactForm.name().touched() && contactForm.name().invalid() ? 'name-error' : null" />
           @if (contactForm.name().touched() && contactForm.name().invalid()) {
-            <p class="error" role="alert">{{ contactForm.name().errors()[0].message }}</p>
+            <p id="name-error" class="error" role="alert">{{ contactForm.name().errors()[0].message }}</p>
           }
         </div>
 
         <div class="field">
           <label for="email">E-mail</label>
-          <input id="email" type="email" autocomplete="email" [formField]="contactForm.email" />
+          <input id="email" type="email" autocomplete="email" [formField]="contactForm.email"
+            [attr.aria-invalid]="contactForm.email().touched() && contactForm.email().invalid() ? 'true' : null"
+            [attr.aria-describedby]="contactForm.email().touched() && contactForm.email().invalid() ? 'email-error' : null" />
           @if (contactForm.email().touched() && contactForm.email().invalid()) {
-            <p class="error" role="alert">{{ contactForm.email().errors()[0].message }}</p>
+            <p id="email-error" class="error" role="alert">{{ contactForm.email().errors()[0].message }}</p>
           }
         </div>
 
@@ -43,9 +47,11 @@
 
         <div class="field">
           <label for="message">Besked</label>
-          <textarea id="message" rows="5" [formField]="contactForm.message"></textarea>
+          <textarea id="message" rows="5" [formField]="contactForm.message"
+            [attr.aria-invalid]="contactForm.message().touched() && contactForm.message().invalid() ? 'true' : null"
+            [attr.aria-describedby]="contactForm.message().touched() && contactForm.message().invalid() ? 'message-error' : null"></textarea>
           @if (contactForm.message().touched() && contactForm.message().invalid()) {
-            <p class="error" role="alert">{{ contactForm.message().errors()[0].message }}</p>
+            <p id="message-error" class="error" role="alert">{{ contactForm.message().errors()[0].message }}</p>
           }
         </div>
 

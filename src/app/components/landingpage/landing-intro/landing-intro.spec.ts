@@ -27,7 +27,7 @@ describe('LandingIntro', () => {
     expect(links.map((link) => link.getAttribute('href'))).toEqual(['/handpan', '/lyd']);
     expect(links.map((link) => link.querySelector('h3')?.textContent?.trim())).toEqual([
       'Handpan',
-      'Lydhealing',
+      'Lydmeditation',
     ]);
   });
 
@@ -35,8 +35,8 @@ describe('LandingIntro', () => {
     const images: HTMLImageElement[] = Array.from(fixture.nativeElement.querySelectorAll('.offer-image img'));
 
     expect(images.map((image) => image.getAttribute('src'))).toEqual([
-      '/handpan-closeup.jpg',
-      '/lyd7.png',
+      '/handpan/handpan (3).jpg',
+      '/lyd7.webp',
     ]);
   });
 });

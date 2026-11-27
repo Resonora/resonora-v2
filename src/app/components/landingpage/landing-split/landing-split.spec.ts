@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 import { LandingSplit } from './landing-split';
 
 describe('LandingSplit', () => {
@@ -8,6 +9,7 @@ describe('LandingSplit', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [LandingSplit],
+      providers: [provideRouter([])],
     }).compileComponents();
 
     fixture = TestBed.createComponent(LandingSplit);

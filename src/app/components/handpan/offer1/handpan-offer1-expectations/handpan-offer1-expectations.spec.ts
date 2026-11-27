@@ -33,10 +33,10 @@ describe('HandpanOffer1Expectations', () => {
     const root = fixture.nativeElement as HTMLElement;
 
     expect(root.querySelector('.audience-list')?.children.length).toBe(4);
-    expect(root.querySelector('.expectation-list')?.children.length).toBe(4);
-    expect(root.querySelector('.expectation-list li:last-child h3')?.textContent).toBe('Tips og tricks');
+    expect(root.querySelector('.expectation-list')?.children.length).toBe(5);
+    expect(root.querySelector('.expectation-list li:last-child h3')?.textContent).toBe("Do's & don'ts");
     expect(root.querySelector('.expectation-list li:last-child p')?.textContent).toContain(
-      'skala, størrelse, stand og pris',
+      'passe på din handpan',
     );
     expect(root.querySelector('.price')?.textContent).toContain('295,-');
     expect(root.querySelector('.booking-link')?.getAttribute('href')).toBe('/kontakt');

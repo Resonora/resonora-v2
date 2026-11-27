@@ -58,8 +58,11 @@ export class Formular {
             botcheck,
           }),
         });
-        const result = (await response.json()) as { success: boolean };
-        if (!result.success) {
+        if (!response.ok) {
+          throw new Error(`Web3Forms returned HTTP ${response.status}`);
+        }
+        const result: unknown = await response.json();
+        if (typeof result !== 'object' || result === null || !('success' in result) || result.success !== true) {
           throw new Error('Web3Forms rejected the submission');
         }
         return undefined;

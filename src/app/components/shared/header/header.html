@@ -22,7 +22,7 @@
   </nav>
   <button class="menu-btn" type="button" [attr.aria-label]="menuOpen() ? 'Luk menu' : 'Åbn menu'"
     [attr.aria-expanded]="menuOpen()" aria-controls="mobileLinks" (click)="toggleMenu()">
-    ☰
+    <span aria-hidden="true">☰</span>
   </button>
   <nav class="mobile-links" id="mobileLinks" aria-label="Mobilmenu" [hidden]="!menuOpen()">
     

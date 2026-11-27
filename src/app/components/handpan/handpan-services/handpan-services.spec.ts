@@ -31,11 +31,15 @@ describe('HandpanServices', () => {
     expect(cards[2].querySelector('.intro-price')).toBeNull();
   });
 
-  it('shows a pointer cursor only on the interactive cards', () => {
-    const cards = (fixture.nativeElement as HTMLElement).querySelectorAll<HTMLElement>('.card');
+  it('makes every offer a keyboard-accessible link to its page', () => {
+    const cards = (fixture.nativeElement as HTMLElement).querySelectorAll<HTMLAnchorElement>('a.card');
 
-    expect(getComputedStyle(cards[0]).cursor).toBe('pointer');
-    expect(getComputedStyle(cards[1]).cursor).toBe('pointer');
-    expect(getComputedStyle(cards[2]).cursor).not.toBe('pointer');
+    expect(Array.from(cards, (card) => card.getAttribute('href'))).toEqual([
+      '/handpan/for-nysgerrige',
+      '/handpan/for-begynderen',
+      '/handpan/for-dig-med-handpan',
+    ]);
+    cards[0].focus();
+    expect(document.activeElement).toBe(cards[0]);
   });
 });

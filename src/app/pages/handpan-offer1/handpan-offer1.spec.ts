@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 import { HandpanOffer1 } from './handpan-offer1';
 
 describe('HandpanOffer1', () => {
@@ -8,6 +9,7 @@ describe('HandpanOffer1', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [HandpanOffer1],
+      providers: [provideRouter([])],
     }).compileComponents();
 
     fixture = TestBed.createComponent(HandpanOffer1);

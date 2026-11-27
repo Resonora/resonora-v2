@@ -21,7 +21,16 @@
   z-index: -1;
   inset: 0;
   background:
-    linear-gradient(90deg, #10251c30 0%, #10251c4d 30%, #10251c 63%, #10251c 100%),
+    linear-gradient(
+      90deg,
+      #10251c1a 0%,
+      #10251c38 20%,
+      #10251c70 38%,
+      #10251cb8 52%,
+      #10251ce6 68%,
+      #10251cf7 82%,
+      #10251c 100%
+    ),
     linear-gradient(0deg, #10251c40, transparent 70%);
   content: '';
 }
@@ -70,7 +79,7 @@ h2 {
 
   .ending-card::before {
     background:
-      linear-gradient(0deg, #10251c 0%, #10251ce8 34%, #10251c20 78%),
+      linear-gradient(0deg, #10251c 0%, #10251cf7 22%, #10251cc9 45%, #10251c66 70%, #10251c1a 100%),
       linear-gradient(90deg, #10251c30, transparent);
   }
 

@@ -17,7 +17,7 @@
   inset: -15% 0;
   background:
      linear-gradient(180deg, #091b1890 0%, #172a2260 38%, #10241dbd 100%),
-     url('/landingpage/landingpage-hero-bg.png') center 45% /
+     url('/landingpage/landingpage-hero-bg.webp') center 45% /
        cover;
   transform: translateY(calc(var(--parallax, 0px) * 0.3));
   will-change: transform;
@@ -66,7 +66,7 @@
   .hero:before {
     background:
       linear-gradient(180deg, #091b1890 0%, #172a2260 38%, #10241dbd 100%),
-      url('/landingpage/landingpage-hero-bg-mobile.png') center / cover;
+      url('/landingpage/landingpage-hero-bg-mobile.webp') center / cover;
   }
 }
 @media (prefers-reduced-motion: reduce) {

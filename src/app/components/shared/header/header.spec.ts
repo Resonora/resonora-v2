@@ -75,7 +75,7 @@ describe('Header', () => {
     expect(button.getAttribute('aria-expanded')).toBe('true');
     expect(dropdown.hidden).toBe(false);
     expect(Array.from(dropdown.querySelectorAll('a'), (link) => link.getAttribute('href'))).toEqual([
-      '/handpan#handpan-services',
+      '/handpan',
       '/handpan/for-nysgerrige',
       '/handpan/for-begynderen',
       '/handpan/for-dig-med-handpan',

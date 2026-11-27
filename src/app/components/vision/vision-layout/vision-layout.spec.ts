@@ -25,12 +25,12 @@ describe('VisionLayout', () => {
     const root = fixture.nativeElement as HTMLElement;
 
     expect(Array.from(root.querySelectorAll('.timeline time'), (date) => date.getAttribute('datetime'))).toEqual([
-      '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-10', '2026-11',
+      '2026-03', '2026-05', '2026-06', '2026-07', '2026-08', '2026-10', '2026-11',
     ]);
     expect(root.querySelector('.timeline')?.textContent).toContain('min smukke C# Pygmy 15');
     expect(root.querySelector('.timeline')?.textContent).toContain('introduktion og undervisning til begyndere');
-    expect(root.querySelector('.vision-background img')?.getAttribute('src')).toBe('/vision-background.png');
-    expect(root.querySelectorAll('.story-image img')).toHaveLength(2);
+    expect(root.querySelector('.vision-background img')?.getAttribute('src')).toBe('/vision-background.webp');
+    expect(root.querySelectorAll('.story-image img')).toHaveLength(3);
     expect(root.querySelector('.contact-link')?.getAttribute('href')).toBe('/kontakt');
   });
 });
