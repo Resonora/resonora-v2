@@ -77,7 +77,7 @@ export const routes: Routes = [
   },
   {
     path: 'kontakt',
-    title: 'Kontakt og booking | Resonora ',
+    title: 'Kontakt og booking | Resonora',
     data: {
       description: 'Kontakt Resonora for spørgsmål eller booking af en handpan-session. Skriv en besked, ring eller send en e-mail.',
       image: 'kontakt',
