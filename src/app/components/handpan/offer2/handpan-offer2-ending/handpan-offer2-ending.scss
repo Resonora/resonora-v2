@@ -35,27 +35,6 @@
   content: '';
 }
 
-.ending-ornament {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: 6%;
-  left: 6%;
-  height: 1px;
-  background: #bd986a80;
-}
-
-.ending-ornament::after {
-  position: absolute;
-  top: -3px;
-  left: 50%;
-  width: 6px;
-  height: 6px;
-  background: var(--gold);
-  content: '';
-  transform: translateX(-50%) rotate(45deg);
-}
-
 .ending-content {
   z-index: 1;
   grid-column: 2;

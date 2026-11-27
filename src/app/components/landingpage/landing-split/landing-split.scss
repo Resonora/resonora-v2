@@ -4,12 +4,6 @@
   min-height: 650px;
 }
 
-.split .eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.36em;
-  font-size: 10px;
-  font-weight: 500;
-}
 .portrait-art {
   position: relative;
   min-height: 590px;
@@ -63,9 +57,6 @@
     min-height: 0;
     background: none;
     pointer-events: none;
-  }
-  .caption-overlay {
-    text-shadow: 0 1px 4px #000;
   }
   .split-text {
     position: relative;
