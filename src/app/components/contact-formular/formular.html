@@ -73,7 +73,7 @@
 
         <button type="submit" class="submit-btn" [disabled]="status() === 'sending'">
           {{ status() === 'sending' ? 'Sender…' : 'Send besked' }}
-          <span aria-hidden="true">↗</span>
+          <span class="arrow-up-right" aria-hidden="true"></span>
         </button>
       </form>
     }

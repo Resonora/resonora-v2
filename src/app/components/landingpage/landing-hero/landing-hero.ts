@@ -13,9 +13,8 @@ export class LandingHero {
 
   constructor() {
     afterNextRender(() => {
-      // Skip the parallax on tablets, where it lags; phones and desktops keep it
       const parallaxCapable = window.matchMedia(
-        '(max-width: 600px), (min-width: 1025px) and (hover: hover)',
+        '(min-width: 1025px) and (hover: hover) and (prefers-reduced-motion: no-preference)',
       );
       if (!parallaxCapable.matches) {
         return;
