@@ -4,9 +4,9 @@ export const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    title: 'Handpan og lyd i Odense | Resonora',
+    title: 'Handpan og lyd | Resonora',
     data: {
-      description: 'Udforsk handpan og nærvær gennem lyd hos Resonora i Odense. Find introduktion og undervisning for nysgerrige og begyndere.',
+      description: 'Udforsk handpan og nærvær gennem lyd hos Resonora. Find introduktion og undervisning for nysgerrige og begyndere.',
       image: 'forside',
       imageAlt: 'En lysende pyramide i en skov',
     },
@@ -24,9 +24,9 @@ export const routes: Routes = [
   },
   {
     path: 'handpan',
-    title: 'Handpan for begyndere i Odense | Resonora',
+    title: 'Handpan for begyndere | Resonora',
     data: {
-      description: 'Prøv handpan eller lær at spille i Odense. Find en session for nysgerrige, begyndere eller dig med din egen handpan.',
+      description: 'Prøv handpan eller lær at spille. Find en session for nysgerrige, begyndere eller dig med din egen handpan.',
       image: 'handpan',
       imageAlt: 'En handpan i landskabet ved solnedgang',
     },
@@ -34,7 +34,7 @@ export const routes: Routes = [
   },
   {
     path: 'handpan/for-nysgerrige',
-    title: 'Prøv handpan i Odense | Resonora',
+    title: 'Prøv handpan | Resonora',
     data: {
       description: 'Oplev din første handpan i en rolig introduktion. Prøv to instrumenter, lær grundlæggende teknik og få råd om køb.',
       image: 'for-nysgerrige',
@@ -45,7 +45,7 @@ export const routes: Routes = [
   },
   {
     path: 'handpan/for-begynderen',
-    title: 'Lær at spille handpan i Odense | Resonora',
+    title: 'Lær at spille handpan | Resonora',
     data: {
       description: 'Dyk ned i handpanens klang, og lær dine første meditative spillemønstre i en session for begyndere.',
       image: 'for-begynderen',
@@ -77,9 +77,9 @@ export const routes: Routes = [
   },
   {
     path: 'kontakt',
-    title: 'Kontakt og booking | Resonora i Odense',
+    title: 'Kontakt og booking | Resonora ',
     data: {
-      description: 'Kontakt Resonora i Odense for spørgsmål eller booking af en handpan-session. Skriv en besked, ring eller send en e-mail.',
+      description: 'Kontakt Resonora for spørgsmål eller booking af en handpan-session. Skriv en besked, ring eller send en e-mail.',
       image: 'kontakt',
       imageAlt: 'En handpan i skovbunden',
     },

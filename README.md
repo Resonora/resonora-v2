@@ -81,7 +81,7 @@ The canonical origin in `src/app/seo-title-strategy.ts`, structured data in
 `src/index.html`, sitemap and robots file use `https://resonora.dk`; update them together
 if the production domain changes. Confirm the business address, phone, email and social
 profile in the structured data are appropriate for public display.
-Original image files remain in `public/`; the app references optimized WebP variants.
+The app uses WebP and JPEG images; social previews use JPEG for compatibility.
 
 ## Running unit tests
 

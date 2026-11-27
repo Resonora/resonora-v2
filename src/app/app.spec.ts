@@ -52,7 +52,7 @@ describe('App routing', () => {
 
     await router.navigateByUrl('/');
     await fixture.whenStable();
-    expect(document.title).toBe('Handpan og lyd i Odense | Resonora');
+    expect(document.title).toBe('Handpan og lyd | Resonora');
   });
 
   it('updates page metadata and canonical URL on navigation', async () => {
@@ -78,7 +78,7 @@ describe('App routing', () => {
       'https://resonora.dk/kontakt',
     );
     expect(document.querySelector('meta[property="og:title"]')?.getAttribute('content')).toBe(
-      'Kontakt og booking | Resonora i Odense',
+      'Kontakt og booking | Resonora',
     );
   });
 
