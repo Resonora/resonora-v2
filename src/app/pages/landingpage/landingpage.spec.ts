@@ -29,24 +29,24 @@ describe('Landingpage', () => {
 
   it('keeps the landing height stable when browser bars resize the viewport', () => {
     const host: HTMLElement = fixture.nativeElement;
-    expect(host.style.getPropertyValue('--landing-vh')).toBe('7.5px');
+    expect(host.style.getPropertyValue('--stable-vh')).toBe('7.5px');
 
     window.innerHeight = 820;
     window.dispatchEvent(new Event('resize'));
-    expect(host.style.getPropertyValue('--landing-vh')).toBe('7.5px');
+    expect(host.style.getPropertyValue('--stable-vh')).toBe('7.5px');
 
     window.innerWidth = 844;
     window.innerHeight = 390;
     window.dispatchEvent(new Event('resize'));
-    expect(host.style.getPropertyValue('--landing-vh')).toBe('3.9px');
+    expect(host.style.getPropertyValue('--stable-vh')).toBe('3.9px');
 
     window.innerWidth = 1440;
     window.dispatchEvent(new Event('resize'));
-    expect(host.style.getPropertyValue('--landing-vh')).toBe('');
+    expect(host.style.getPropertyValue('--stable-vh')).toBe('');
 
     fixture.destroy();
     window.innerWidth = 390;
     window.dispatchEvent(new Event('resize'));
-    expect(host.style.getPropertyValue('--landing-vh')).toBe('');
+    expect(host.style.getPropertyValue('--stable-vh')).toBe('');
   });
 });

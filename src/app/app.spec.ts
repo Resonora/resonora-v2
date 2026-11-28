@@ -97,6 +97,23 @@ describe('App routing', () => {
     expect(root.querySelector('app-footer')).toBeTruthy();
   });
 
+  it.each([
+    ['/handpan', 'app-handpan'],
+    ['/lyd', 'app-lydrummet'],
+  ])('keeps %s stable when the mobile browser bars resize', async (url, selector) => {
+    vi.stubGlobal('innerWidth', 390);
+    vi.stubGlobal('innerHeight', 750);
+    const fixture = TestBed.createComponent(App);
+    await TestBed.inject(Router).navigateByUrl(url);
+    await fixture.whenStable();
+
+    const page = fixture.nativeElement.querySelector(selector) as HTMLElement;
+    expect(page.style.getPropertyValue('--stable-vh')).toBe('7.5px');
+    window.innerHeight = 820;
+    window.dispatchEvent(new Event('resize'));
+    expect(page.style.getPropertyValue('--stable-vh')).toBe('7.5px');
+  });
+
   it('keeps the shared layout on future pages and navigates back to a landing section', async () => {
     const fixture = TestBed.createComponent(App);
     const router = TestBed.inject(Router);

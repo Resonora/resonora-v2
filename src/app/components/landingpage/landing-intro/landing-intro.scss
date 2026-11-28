@@ -1,6 +1,6 @@
 .intro {
   text-align: center;
-  padding: calc(var(--landing-vh, 1vh) * 30) 25px calc(var(--landing-vh, 1vh) * 20);
+  padding: calc(var(--stable-vh, 1vh) * 30) 25px calc(var(--stable-vh, 1vh) * 20);
   position: relative;
   z-index: 0;
   color: var(--cream);
@@ -147,7 +147,7 @@
 
 @media (max-width: 850px) {
   .intro {
-    padding: calc(90px + var(--landing-vh, 1vh) * 24) 20px 90px;
+    padding: calc(90px + var(--stable-vh, 1vh) * 24) 20px 90px;
   }
   .offers {
     grid-template-columns: 1fr;
@@ -158,7 +158,7 @@
 }
 @media (max-width: 480px) {
   .intro {
-    padding: calc(60px + var(--landing-vh, 1vh) * 20) 16px 70px;
+    padding: calc(60px + var(--stable-vh, 1vh) * 20) 16px 70px;
   }
   .intro h2 {
     font-size: 36px;
