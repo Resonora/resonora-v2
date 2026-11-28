@@ -1,5 +1,5 @@
 .hero {
-  height: 115svh;
+  height: calc(var(--landing-vh, 1svh) * 115);
   position: relative;
   display: grid;
   place-items: center;
@@ -7,9 +7,9 @@
   text-align: center;
   overflow: hidden;
   z-index: 1;
-  margin-bottom: -20vh;
-  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 calc(100% - 20vh), #000000e6 calc(100% - 16.5vh), #000000a6 calc(100% - 11.5vh), #00000059 calc(100% - 6.5vh), #0000001a calc(100% - 2.8vh), transparent 100%);
-  mask-image: linear-gradient(180deg, #000 0%, #000 calc(100% - 20vh), #000000e6 calc(100% - 16.5vh), #000000a6 calc(100% - 11.5vh), #00000059 calc(100% - 6.5vh), #0000001a calc(100% - 2.8vh), transparent 100%);
+  margin-bottom: calc(var(--landing-vh, 1vh) * -20);
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 calc(100% - var(--landing-vh, 1vh) * 20), #000000e6 calc(100% - var(--landing-vh, 1vh) * 16.5), #000000a6 calc(100% - var(--landing-vh, 1vh) * 11.5), #00000059 calc(100% - var(--landing-vh, 1vh) * 6.5), #0000001a calc(100% - var(--landing-vh, 1vh) * 2.8), transparent 100%);
+  mask-image: linear-gradient(180deg, #000 0%, #000 calc(100% - var(--landing-vh, 1vh) * 20), #000000e6 calc(100% - var(--landing-vh, 1vh) * 16.5), #000000a6 calc(100% - var(--landing-vh, 1vh) * 11.5), #00000059 calc(100% - var(--landing-vh, 1vh) * 6.5), #0000001a calc(100% - var(--landing-vh, 1vh) * 2.8), transparent 100%);
 }
 .hero:before {
   content: '';
@@ -46,7 +46,7 @@
 .scroll {
   position: absolute;
   z-index: 2;
-  bottom: calc(10vh + 20px);
+  bottom: calc(var(--landing-vh, 1vh) * 10 + 20px);
   font-size: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -84,25 +84,25 @@
     .hero:before {
       animation: mobile-hero-background auto linear both;
       animation-timeline: scroll(root);
-      animation-range: 0px 100svh;
+      animation-range: 0px calc(var(--landing-vh, 1svh) * 100);
     }
 
     .hero-content {
       animation: mobile-hero-content auto linear both, mobile-hero-fade auto linear both;
       animation-timeline: scroll(root), scroll(root);
-      animation-range: 0px 100svh, 0px 700px;
+      animation-range: 0px calc(var(--landing-vh, 1svh) * 100), 0px 700px;
     }
   }
 }
 
 @keyframes mobile-hero-background {
   from { transform: translateY(0); }
-  to { transform: translateY(30svh); }
+  to { transform: translateY(calc(var(--landing-vh, 1svh) * 30)); }
 }
 
 @keyframes mobile-hero-content {
   from { transform: translateY(0); }
-  to { transform: translateY(12svh); }
+  to { transform: translateY(calc(var(--landing-vh, 1svh) * 12)); }
 }
 
 @keyframes mobile-hero-fade {
